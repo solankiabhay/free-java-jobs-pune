@@ -6,7 +6,7 @@ Rules: posted within last 24h only (datePosted from feed), unverifiable dates dr
 Pune only, 70%+ resume match, top 10 emailed via Gmail with match %, missing skills
 and apply link. Also writes jobs.json for the GitHub Pages site (index.html).
 
-Env vars: GMAIL_ADDRESS, GMAIL_APP_PASSWORD, MAIL_TO, ADZUNA_APP_ID, ADZUNA_APP_KEY
+Env vars: GMAIL_ADDRESS, GMAIL_APP_PASSWORD, MAIL_TO, ADZUNA_APP_ID, ADZUNA_APP_KEY, SERPAPI_KEY
 """
 import html, json, os, re, smtplib, ssl, sys, urllib.request, urllib.parse
 from datetime import date, datetime, timezone
@@ -131,13 +131,49 @@ def fetch_adzuna(query):
     return out
 
 
+# ---------- source 3: Google Jobs via SerpApi (includes LinkedIn / Naukri / Indeed listings) ----------
+SERP_QUERIES = ["java developer pune", "spring boot developer pune"]   # keep small: free plan has monthly limit
+
+
+def fetch_serpapi(query):
+    params = {"engine": "google_jobs", "q": query, "location": "Pune, Maharashtra, India",
+              "hl": "en", "gl": "in", "chips": "date_posted:today",
+              "api_key": os.environ["SERPAPI_KEY"]}
+    data = fetch_json("https://serpapi.com/search.json?" + urllib.parse.urlencode(params))
+    if data.get("error") and not data.get("jobs_results"):
+        if "hasn't returned any results" in str(data["error"]):
+            return []
+        raise RuntimeError(str(data["error"]))
+    out = []
+    for x in data.get("jobs_results", []):
+        ext = x.get("detected_extensions") or {}
+        opts = x.get("apply_options") or []
+        link = (opts[0].get("link") if opts else "") or x.get("share_link", "")
+        title = strip_html(x.get("title"))
+        via = strip_html(x.get("via")).replace("via ", "")
+        out.append({
+            "source": f"Google Jobs ({via})" if via else "Google Jobs",
+            "title": title, "company": strip_html(x.get("company_name")),
+            "location": strip_html(x.get("location")) or "Pune",
+            "posted": ext.get("posted_at", ""), "url": link,
+            "exp": "", "salary": strip_html(ext.get("salary", "")),
+            "remote": bool(ext.get("work_from_home")),
+            "text": title + " " + strip_html(x.get("description")),
+        })
+    return out
+
+
 def fetch_all_sources():
     jobs, urls, errors = [], set(), []
     sources = [("OnJob", fetch_free_jobs)]
     if os.environ.get("ADZUNA_APP_ID") and os.environ.get("ADZUNA_APP_KEY"):
         sources += [(f"Adzuna '{q}'", lambda q=q: fetch_adzuna(q)) for q in ADZUNA_QUERIES]
     else:
-        print("WARNING: ADZUNA_APP_ID / ADZUNA_APP_KEY not set, using OnJob only.")
+        print("WARNING: ADZUNA_APP_ID / ADZUNA_APP_KEY not set, skipping Adzuna.")
+    if os.environ.get("SERPAPI_KEY"):
+        sources += [(f"Google Jobs '{q}'", lambda q=q: fetch_serpapi(q)) for q in SERP_QUERIES]
+    else:
+        print("WARNING: SERPAPI_KEY not set, skipping Google Jobs.")
     for name, fn in sources:
         try:
             found = fn()
@@ -159,6 +195,14 @@ def age_hours(posted):
     p = (posted or "").strip()
     if not p:
         return None
+    low = p.lower()
+    if re.search(r"just now|few (seconds|minutes)|today|few hours", low):
+        return 0.0
+    m = re.match(r"(?:posted\s+)?(\d+)\+?\s*(minute|min|hour|hr|day|week|month)", low)
+    if m:  # relative text such as "3 hours ago" (Google Jobs); days+ get +1h safety margin
+        n, u = int(m.group(1)), m.group(2)
+        return n * {"minute": 1/60, "min": 1/60, "hour": 1, "hr": 1, "day": 24,
+                    "week": 168, "month": 720}[u] + (1 if u in ("day", "week", "month") else 0)
     try:
         d = datetime.fromisoformat(p.replace("Z", "+00:00").replace("z", "+00:00"))
     except ValueError:
@@ -336,7 +380,7 @@ def main():
     else:
         body = ("<p>No jobs met all rules today (posted in last 24h, Pune, 70%+ match, "
                 "date verified). Nothing fake added.</p>")
-    body += (f"<p style='color:#777;font-size:12px'>Sources: Adzuna API + OnJob.io feed. "
+    body += (f"<p style='color:#777;font-size:12px'>Sources: Google Jobs (LinkedIn/Naukri/Indeed listings), Adzuna, OnJob.io. "
              f"Checked {len(jobs)} postings ({len(pune_jobs)} in Pune); {stale} older than 24h and "
              f"{len(unparsed)} with unverifiable dates were dropped. "
              "Feed does not include every job board.</p>")
