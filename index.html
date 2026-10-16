@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Fresh Java Jobs Pune | Daily Job Updates</title>
+  <meta name="description" content="Find fresh Java Developer, Spring Boot, Microservices and Full Stack jobs in Pune.">
+  <meta name="theme-color" content="#111827">
+
+  <style>
+    :root {
+      --bg: #f4f6fa;
+      --card: #ffffff;
+      --text: #172033;
+      --muted: #667085;
+      --accent: #f97316;
+      --border: #e5e7eb;
+      --green: #15803d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 38px 20px;
+    }
+
+    .container {
+      width: min(1100px, 100%);
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: #fdba74;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      margin: 12px 0;
+      font-size: clamp(28px, 5vw, 43px);
+    }
+
+    header p {
+      color: #d1d5db;
+      line-height: 1.7;
+    }
+
+    .updated {
+      color: #d1d5db;
+      font-size: 13px;
+      margin-top: 18px;
+    }
+
+    main {
+      padding: 28px 20px 50px;
+    }
+
+    .notice {
+      padding: 14px;
+      border-radius: 10px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #9a3412;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    input, select, button {
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: white;
+      font-size: 14px;
+    }
+
+    input {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    button {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .stat {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      min-width: 140px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 23px;
+      margin-bottom: 5px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .jobs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
+      gap: 16px;
+    }
+
+    .job {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      box-shadow: 0 3px 12px rgba(16, 24, 40, 0.04);
+    }
+
+    .job h2 {
+      font-size: 19px;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .company {
+      font-weight: bold;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      padding: 5px 9px;
+      border-radius: 20px;
+      background: #f3f4f6;
+      font-size: 12px;
+    }
+
+    .match {
+      background: #dcfce7;
+      color: #166534;
+      font-weight: bold;
+    }
+
+    .apply {
+      display: inline-block;
+      margin-top: auto;
+      padding-top: 10px;
+      color: #c2410c;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .apply:hover {
+      text-decoration: underline;
+    }
+
+    .empty {
+      grid-column: 1 / -1;
+      padding: 35px 20px;
+      text-align: center;
+      border: 1px dashed #cbd5e1;
+      border-radius: 12px;
+      background: white;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 550px) {
+      header {
+        padding: 28px 16px;
+      }
+
+      main {
+        padding: 20px 14px 35px;
+      }
+
+      .toolbar > * {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div class="eyebrow">Daily Job Updates · Pune, India</div>
+
+      <h1>Fresh Java Jobs in Pune</h1>
+
+      <p>
+        Find Java Developer, Senior Java Developer, Spring Boot,
+        Microservices, Backend and Full Stack opportunities.
+      </p>
+
+      <div class="updated">
+        Last data update: <span id="updated">Loading...</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="notice">
+      Jobs are loaded from this repository's <strong>jobs.json</strong>
+      file. GitHub Actions must update that file daily for new listings
+      to appear here. This page does not read your Gmail inbox directly.
+    </div>
+
+    <div class="toolbar">
+      <input
+        type="search"
+        id="search"
+        placeholder="Search Java, Spring Boot, company..."
+        aria-label="Search jobs"
+      >
+
+      <select id="sort" aria-label="Sort jobs">
+        <option value="newest">Newest first</option>
+        <option value="match">Highest resume match</option>
+      </select>
+
+      <button class="primary" id="refresh">
+        Refresh Jobs
+      </button>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <strong id="count">0</strong>
+        <span>Jobs displayed</span>
+      </div>
+
+      <div class="stat">
+        <strong>24h</strong>
+        <span>Freshness target</span>
+      </div>
+
+      <div class="stat">
+        <strong>70%+</strong>
+        <span>Resume match target</span>
+      </div>
+    </div>
+
+    <section class="jobs" id="jobs" aria-live="polite">
+      <div class="empty">Loading job listings...</div>
+    </section>
+
+  </main>
+
+  <footer>
+    Fresh Java Jobs Pune · Verify the original job listing before applying.
+  </footer>
+
+  <script>
+    const jobsContainer = document.getElementById("jobs");
+    const searchInput = document.getElementById("search");
+    const sortSelect = document.getElementById("sort");
+    const countElement = document.getElementById("count");
+    const updatedElement = document.getElementById("updated");
+
+    let allJobs = [];
+
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>"']/g, function (char) {
+        return {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;"
+        }[char];
+      });
+    }
+
+    function safeURL(value) {
+      try {
+        const url = new URL(value || "", window.location.href);
+
+        if (url.protocol === "https:" || url.protocol === "http:") {
+          return url.href;
+        }
+      } catch (error) {
+        // Invalid URL: do not create an application link.
+      }
+
+      return "";
+    }
+
+    function renderJob(job) {
+      const title = escapeHTML(job.title || "Java Developer");
+      const company = escapeHTML(job.company || "Company not listed");
+      const location = escapeHTML(job.location || "Pune");
+      const posted = escapeHTML(
+        job.age_label || job.posted || "Date not provided"
+      );
+      const source = escapeHTML(job.source || "Job source");
+
+      const matchValue = Number(job.match);
+      const match = Number.isFinite(matchValue) && job.match !== ""
+        ? `<span class="tag match">${escapeHTML(matchValue)}% match</span>`
+        : "";
+
+      const missing = Array.isArray(job.missing) ? job.missing : [];
+      const skills = Array.isArray(job.skills) ? job.skills : [];
+
+      const tags = [
+        ...skills.slice(0, 4).map(skill =>
+          `<span class="tag">${escapeHTML(skill)}</span>`
+        ),
+        ...missing.slice(0, 3).map(skill =>
+          `<span class="tag">Gap: ${escapeHTML(skill)}</span>`
+        )
+      ].join("");
+
+      const url = safeURL(job.url || job.applyUrl);
+
+      return `
+        <article class="job">
+          <h2>${title}</h2>
+
+          <div class="company">${company}</div>
+
+          <div class="meta">
+            Location: ${location}<br>
+            Posted: ${posted}<br>
+            Source: ${source}
+          </div>
+
+          <div class="tags">
+            ${match}
+            ${tags}
+          </div>
+
+          ${
+            url
+              ? `<a class="apply"
+                    href="${escapeHTML(url)}"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    View Job / Apply ↗
+                 </a>`
+              : `<span class="meta">Application link unavailable</span>`
+          }
+        </article>
+      `;
+    }
+
+    function renderJobs() {
+      const query = searchInput.value.trim().toLowerCase();
+
+      let filtered = allJobs.filter(job => {
+        const searchable = [
+          job.title,
+          job.company,
+          job.location,
+          job.text,
+          ...(Array.isArray(job.skills) ? job.skills : [])
+        ].join(" ").toLowerCase();
+
+        return searchable.includes(query);
+      });
+
+      if (sortSelect.value === "match") {
+        filtered.sort((a, b) =>
+          (Number(b.match) || 0) - (Number(a.match) || 0)
+        );
+      } else {
+        filtered.sort((a, b) => {
+          const dateA = Date.parse(a.postedAt || a.posted || "") || 0;
+          const dateB = Date.parse(b.postedAt || b.posted || "") || 0;
+          return dateB - dateA;
+        });
+      }
+
+      countElement.textContent = filtered.length;
+
+      if (filtered.length === 0) {
+        jobsContainer.innerHTML = `
+          <div class="empty">
+            <strong>No jobs to display.</strong><br>
+            The jobs.json file may be empty, or no jobs match your search.
+          </div>
+        `;
+        return;
+      }
+
+      jobsContainer.innerHTML = filtered.map(renderJob).join("");
+    }
+
+    async function loadJobs() {
+      jobsContainer.innerHTML = `
+        <div class="empty">Fetching latest available job data...</div>
+      `;
+
+      try {
+        const response = await fetch("./jobs.json?v=" + Date.now(), {
+          cache: "no-store"
+        });
+
+        if (!response.ok) {
+          throw new Error("jobs.json not found");
+        }
+
+        const data = await response.json();
+
+        // Supports either a plain array or { jobs: [...], updatedAt: "..." }.
+        allJobs = Array.isArray(data)
+          ? data
+          : Array.isArray(data.jobs)
+            ? data.jobs
+            : [];
+
+        if (!Array.isArray(data) && data.updatedAt) {
+          const parsed = new Date(data.updatedAt);
+          updatedElement.textContent = Number.isNaN(parsed.getTime())
+            ? data.updatedAt
+            : parsed.toLocaleString();
+        } else {
+          updatedElement.textContent = "Data loaded";
+        }
+
+        renderJobs();
+
+      } catch (error) {
+        allJobs = [];
+        countElement.textContent = "0";
+        updatedElement.textContent = "Unavailable";
+
+        jobsContainer.innerHTML = `
+          <div class="empty">
+            <strong>Job data is not available yet.</strong><br>
+            Please add jobs.json to the repository and configure your
+            daily workflow to update it.<br>
+            This HTML page cannot fetch jobs automatically on its own.
+          </div>
+        `;
+      }
+    }
+
+    searchInput.addEventListener("input", renderJobs);
+    sortSelect.addEventListener("change", renderJobs);
+    document.getElementById("refresh").addEventListener("click", loadJobs);
+
+    loadJobs();
+  </script>
+
+</body>
+</html>
