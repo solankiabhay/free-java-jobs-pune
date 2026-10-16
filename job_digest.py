@@ -43,30 +43,48 @@ def fetch_rss_feed(url):
         url, headers={"User-Agent": "Mozilla/5.0 (compatible; JavaJobsDigest/1.0)"})
     with urllib.request.urlopen(request, timeout=30) as response:
         raw = response.read()
+
     root = ET.fromstring(raw)
-    items = root.findall(".//item")
+
+    def local_name(tag):
+        # Handles both plain tags and namespaced tags such as {http://purl.org/dc/elements/1.1/}date.
+        return tag.rsplit("}", 1)[-1].split(":")[-1].lower()
+
+    def child_values(node):
+        values = {}
+        for child in node.iter():
+            if child is node:
+                continue
+            name = local_name(child.tag)
+            text_value = " ".join(t.strip() for t in child.itertext() if t.strip())
+            if text_value and name not in values:
+                values[name] = text_value
+            # RSS links may be represented by an href attribute (Atom style).
+            if name == "link" and not text_value and child.attrib.get("href"):
+                values[name] = child.attrib["href"]
+        return values
+
+    items = [node for node in root.iter() if local_name(node.tag) == "item"]
     if not items:
-        # Support Atom feeds too, in case the feed provider changes format.
-        ns = {"atom": "http://www.w3.org/2005/Atom"}
-        entries = root.findall(".//atom:entry", ns)
-        for entry in entries:
-            title = entry.findtext("atom:title", default="", namespaces=ns)
-            link_el = entry.find("atom:link", ns)
-            link = link_el.attrib.get("href", "") if link_el is not None else ""
-            desc = entry.findtext("atom:summary", default="", namespaces=ns)
-            posted = entry.findtext("atom:published", default="", namespaces=ns) or entry.findtext("atom:updated", default="", namespaces=ns)
-            items.append({"title": title, "link": link, "description": desc, "pubDate": posted})
+        items = [node for node in root.iter() if local_name(node.tag) == "entry"]
+
     jobs = []
+    date_aliases = ("pubdate", "published", "publishedat", "datepublished", "updated",
+                    "date", "created", "createdat", "postingdate", "posted", "timestamp")
     for item in items:
-        if isinstance(item, dict):
-            get = item.get
-        else:
-            get = lambda tag, node=item: node.findtext(tag, default="")
-        title = strip_html(get("title"))
-        link = (get("link") or "").strip()
-        description = strip_html(get("description") or get("summary") or get("content:encoded"))
-        posted = (get("pubDate") or get("published") or get("updated") or get("date") or "").strip()
-        company = strip_html(get("author") or get("source") or "")
+        values = child_values(item)
+        title = strip_html(values.get("title", ""))
+        link = (values.get("link", "") or values.get("guid", "")).strip()
+        description = strip_html(values.get("description", "") or values.get("summary", "")
+                                 or values.get("encoded", "") or values.get("content", ""))
+        posted = ""
+        for field in date_aliases:
+            if values.get(field):
+                posted = values[field].strip()
+                break
+        company = strip_html(values.get("author", "") or values.get("creator", "")
+                             or values.get("source", ""))
+
         if not title or not link:
             continue
         jobs.append({
@@ -74,6 +92,10 @@ def fetch_rss_feed(url):
             "location": "Pune, Maharashtra, India", "posted": posted, "url": link,
             "exp": "", "salary": "", "text": title + " " + description,
         })
+
+    if items and jobs and not any(job["posted"] for job in jobs):
+        print("WARNING: RSS items have no recognized posting-date field.")
+        print("Available fields in first item:", sorted(child_values(items[0]).keys()))
     return jobs
 
 def fetch_free_jobs():
