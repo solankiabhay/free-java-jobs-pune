@@ -1,0 +1,62 @@
+name: Daily Java Jobs Pune
+
+on:
+  schedule:
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-java-jobs
+  cancel-in-progress: false
+
+jobs:
+  update-jobs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+
+      - name: Run job digest and generate jobs.json
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+        run: python job_digest.py
+
+      - name: Check jobs.json
+        run: |
+          if [ ! -f jobs.json ]; then
+            echo "ERROR: jobs.json was not generated."
+            exit 1
+          fi
+          python -m json.tool jobs.json > /dev/null
+          echo "jobs.json generated and validated."
+
+      - name: Commit updated jobs.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add jobs.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update daily Java jobs"
+            git push
+          else
+            echo "No changes to jobs.json."
+          fi
