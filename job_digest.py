@@ -235,17 +235,23 @@ def is_pune(j):
 
 
 def evaluate(j):
-    """Returns (match_percent, missing_skills) or None if rejected outright."""
+    """Returns (match_percent, missing_skills) or None if rejected outright.
+    The reason for a hard rejection is stored in j['reject']."""
     title = j["title"].lower()
     t = (j["title"] + " " + j["text"]).lower().replace("javascript", "js")
     if not has("java", t):
+        j["reject"] = "no 'java' in title/description"
         return None
-    if re.search(BAD_TITLE, title):
+    bad = re.search(BAD_TITLE, title)
+    if bad:
+        j["reject"] = f"title filtered ('{bad.group(0)}')"
         return None
     if not is_pune(j):
+        j["reject"] = f"not Pune (location: {j['location']})"
         return None
     er = exp_range(j)
     if er and er[0] >= 9:
+        j["reject"] = f"experience too high ({er[0]}-{er[1]} yrs)"
         return None
 
     found_have = {k: w for k, w in RESUME_SKILLS.items() if has(k, t)}
@@ -350,6 +356,10 @@ def main():
             continue
         res = evaluate(j)
         if not res or res[0] < MIN_MATCH or key(j) in seen:
+            if is_pune(j) or "Google" in j["source"]:   # explain why fresh Pune/Google jobs were skipped
+                why = (j.get("reject") or (f"match {res[0]}% < {MIN_MATCH}%" if res else "")
+                       or ("already emailed before" if key(j) in seen else "?"))
+                print(f"  skipped: {j['title']} | {j['company']} | {j['source']} | {why}")
             continue
         j["match"], j["missing"] = res
         j["age_hours"] = h
