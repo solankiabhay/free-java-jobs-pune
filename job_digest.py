@@ -6,9 +6,9 @@ Rules: posted within last 24h only (datePosted from feed), unverifiable dates dr
 Pune only, 70%+ resume match, top 10 emailed via Gmail with match %, missing skills
 and apply link. Also writes jobs.json for the GitHub Pages site (index.html).
 
-Env vars: GMAIL_ADDRESS, GMAIL_APP_PASSWORD, MAIL_TO
+Env vars: GMAIL_ADDRESS, GMAIL_APP_PASSWORD, MAIL_TO, ADZUNA_APP_ID, ADZUNA_APP_KEY
 """
-import html, json, os, re, smtplib, ssl, sys, urllib.request
+import html, json, os, re, smtplib, ssl, sys, urllib.request, urllib.parse
 from datetime import date, datetime, timezone
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -103,8 +103,54 @@ def fetch_free_jobs():
                 urls.add(j["url"])
                 jobs.append(j)
     print(f"Feed: {len(jobs)} jobs fetched (feed count: {first.get('totalCount')})")
-    if not jobs:
-        raise RuntimeError("OnJob feed returned 0 jobs (format may have changed).")
+    return jobs
+
+
+# ---------- source 2: Adzuna API (free key from developer.adzuna.com) ----------
+ADZUNA_QUERIES = ["java developer", "spring boot", "java microservices", "java full stack"]
+
+
+def fetch_adzuna(query):
+    params = {"app_id": os.environ["ADZUNA_APP_ID"], "app_key": os.environ["ADZUNA_APP_KEY"],
+              "what": query, "where": "Pune", "max_days_old": 2, "results_per_page": 50,
+              "sort_by": "date", "content-type": "application/json"}
+    url = "https://api.adzuna.com/v1/api/jobs/in/search/1?" + urllib.parse.urlencode(params)
+    data = fetch_json(url)
+    out = []
+    for x in data.get("results", []):
+        lo, hi = x.get("salary_min"), x.get("salary_max")
+        title = strip_html(x.get("title"))
+        out.append({
+            "source": "Adzuna", "title": title,
+            "company": (x.get("company") or {}).get("display_name", ""),
+            "location": (x.get("location") or {}).get("display_name", "") or "Pune",
+            "posted": x.get("created", ""), "url": x.get("redirect_url", ""),
+            "exp": "", "salary": f"₹{int(lo):,}–₹{int(hi):,}" if lo and hi else "",
+            "remote": False, "text": title + " " + strip_html(x.get("description")),
+        })
+    return out
+
+
+def fetch_all_sources():
+    jobs, urls, errors = [], set(), []
+    sources = [("OnJob", fetch_free_jobs)]
+    if os.environ.get("ADZUNA_APP_ID") and os.environ.get("ADZUNA_APP_KEY"):
+        sources += [(f"Adzuna '{q}'", lambda q=q: fetch_adzuna(q)) for q in ADZUNA_QUERIES]
+    else:
+        print("WARNING: ADZUNA_APP_ID / ADZUNA_APP_KEY not set, using OnJob only.")
+    for name, fn in sources:
+        try:
+            found = fn()
+            print(f"{name}: {len(found)} jobs")
+            for j in found:
+                if j["url"] and j["url"] not in urls:
+                    urls.add(j["url"])
+                    jobs.append(j)
+        except Exception as exc:
+            errors.append(f"{name}: {type(exc).__name__}: {exc}")
+            print(f"{name} failed: {errors[-1]}", file=sys.stderr)
+    if not jobs and errors:
+        raise RuntimeError(" | ".join(errors))
     return jobs
 
 
@@ -227,7 +273,7 @@ def send_email(subject, body):
 # ---------- main ----------
 def main():
     try:
-        jobs = fetch_free_jobs()
+        jobs = fetch_all_sources()
     except Exception as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         try:
@@ -290,7 +336,7 @@ def main():
     else:
         body = ("<p>No jobs met all rules today (posted in last 24h, Pune, 70%+ match, "
                 "date verified). Nothing fake added.</p>")
-    body += (f"<p style='color:#777;font-size:12px'>Source: OnJob.io public jobs feed. "
+    body += (f"<p style='color:#777;font-size:12px'>Sources: Adzuna API + OnJob.io feed. "
              f"Checked {len(jobs)} postings ({len(pune_jobs)} in Pune); {stale} older than 24h and "
              f"{len(unparsed)} with unverifiable dates were dropped. "
              "Feed does not include every job board.</p>")
