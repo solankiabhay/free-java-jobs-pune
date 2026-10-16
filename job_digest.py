@@ -1,5 +1,5 @@
 """
-Daily FRESH Java jobs digest (Pune) for Abhay using a public RSS feed (no Apify/API key).
+Daily FRESH Java jobs digest (Pune) for Abhay using OnJob.io public JSON feed (no Apify/API key).
 Strict rules: posted within last 24h only, unverifiable dates dropped, Pune feed,
 70%+ resume match, top 10 emailed via Gmail with match %, missing skills and apply link.
 
@@ -17,8 +17,9 @@ MIN_MATCH = 70            # only show jobs at or above this match %
 MAX_AGE_HOURS = 24        # strict freshness
 YEARS_EXP = 6.5           # Jan 2020 -> now
 SEEN_FILE = "seen_jobs.json"
-# Public Pune RSS feed; no Apify token or paid scraping actor required.
-RSS_FEEDS = ["https://www.onjob.io/job-alerts/jobs-in-pune.xml"]
+# Public OnJob.io JSON feed; each job may include Google JobPosting JSON-LD.
+JSON_FEED = "https://onjob.io/feeds/jobs.json"
+MAX_FEED_PAGES = 20
 
 # skills in your resume (weight = importance)
 RESUME_SKILLS = {"java": 3, "spring boot": 3, "spring": 2, "spring mvc": 2, "hibernate": 2,
@@ -31,86 +32,174 @@ GAP_SKILLS = {"kafka": 2, "aws": 2, "kubernetes": 2, "redis": 1, "postgresql": 1
               "jenkins": 1, "ci/cd": 1, "terraform": 1, "rabbitmq": 1, "elasticsearch": 1}
 # ----------------------------------------------------------
 
-# ---------- free public RSS source ----------
+# ---------- free public JSON source ----------
 def strip_html(value):
-    value = html.unescape(value or "")
+    if isinstance(value, (dict, list)):
+        value = json.dumps(value, ensure_ascii=False)
+    value = html.unescape(str(value or ""))
     value = re.sub(r"(?is)<(script|style).*?>.*?</\1>", " ", value)
     value = re.sub(r"(?s)<[^>]+>", " ", value)
     return re.sub(r"\s+", " ", value).strip()
 
-def fetch_rss_feed(url):
+
+def fetch_json(url):
     request = urllib.request.Request(
-        url, headers={"User-Agent": "Mozilla/5.0 (compatible; JavaJobsDigest/1.0)"})
-    with urllib.request.urlopen(request, timeout=30) as response:
+        url, headers={"User-Agent": "Mozilla/5.0 (compatible; JavaJobsDigest/1.0)",
+                      "Accept": "application/json"})
+    with urllib.request.urlopen(request, timeout=40) as response:
         raw = response.read()
+    return json.loads(raw.decode("utf-8-sig"))
 
-    root = ET.fromstring(raw)
 
-    def local_name(tag):
-        # Handles both plain tags and namespaced tags such as {http://purl.org/dc/elements/1.1/}date.
-        return tag.rsplit("}", 1)[-1].split(":")[-1].lower()
+def walk_dicts(value):
+    """Yield every dictionary in a nested JSON response."""
+    if isinstance(value, dict):
+        yield value
+        for child in value.values():
+            yield from walk_dicts(child)
+    elif isinstance(value, list):
+        for child in value:
+            yield from walk_dicts(child)
 
-    def child_values(node):
-        values = {}
-        for child in node.iter():
-            if child is node:
-                continue
-            name = local_name(child.tag)
-            text_value = " ".join(t.strip() for t in child.itertext() if t.strip())
-            if text_value and name not in values:
-                values[name] = text_value
-            # RSS links may be represented by an href attribute (Atom style).
-            if name == "link" and not text_value and child.attrib.get("href"):
-                values[name] = child.attrib["href"]
-        return values
 
-    items = [node for node in root.iter() if local_name(node.tag) == "item"]
-    if not items:
-        items = [node for node in root.iter() if local_name(node.tag) == "entry"]
+def find_value(obj, aliases):
+    """Find the first non-empty value for an alias, including nested JSON-LD."""
+    aliases = {a.lower() for a in aliases}
+    for d in walk_dicts(obj):
+        for k, v in d.items():
+            if str(k).lower() in aliases and v not in (None, "", [], {}):
+                if isinstance(v, (str, int, float)):
+                    return str(v).strip()
+                if isinstance(v, dict):
+                    # Schema.org URLs / organization names are often nested objects.
+                    for subkey in ("name", "url", "@id", "value"):
+                        if v.get(subkey):
+                            return str(v[subkey]).strip()
+                    return strip_html(v)
+                if isinstance(v, list):
+                    return strip_html(v)
+    return ""
 
+
+def find_job_url(obj):
+    value = find_value(obj, ("url", "applyUrl", "apply_url", "link", "canonicalUrl", "canonical_url"))
+    if value.startswith("http://") or value.startswith("https://"):
+        return value
+    # Some JSON-LD records keep the listing URL in @id.
+    value = find_value(obj, ("@id",))
+    return value if value.startswith(("http://", "https://")) else ""
+
+
+def location_text(obj):
+    parts = []
+    for d in walk_dicts(obj):
+        for key_name in ("addressLocality", "addressRegion", "addressCountry", "city", "locationName"):
+            value = d.get(key_name)
+            if isinstance(value, str) and value.strip() and value.strip() not in parts:
+                parts.append(value.strip())
+        # Plain string location fields.
+        for key_name in ("location", "jobLocation", "address"):
+            value = d.get(key_name)
+            if isinstance(value, str) and value.strip() and value.strip() not in parts:
+                parts.append(value.strip())
+    return ", ".join(parts)
+
+
+def candidate_dicts(data):
+    """Identify job-like objects without assuming one specific feed wrapper shape."""
+    out = []
+    seen_obj_ids = set()
+    for d in walk_dicts(data):
+        keys = {str(k).lower() for k in d.keys()}
+        has_title = bool(keys.intersection({"title", "headline", "name", "jobtitle"}))
+        has_url = bool(keys.intersection({"url", "link", "applyurl", "apply_url", "canonical_url", "@id"}))
+        if has_title and has_url and id(d) not in seen_obj_ids:
+            seen_obj_ids.add(id(d))
+            out.append(d)
+    return out
+
+
+def fetch_json_feed_page(url):
+    data = fetch_json(url)
     jobs = []
-    date_aliases = ("pubdate", "published", "publishedat", "datepublished", "updated",
-                    "date", "created", "createdat", "postingdate", "posted", "timestamp")
-    for item in items:
-        values = child_values(item)
-        title = strip_html(values.get("title", ""))
-        link = (values.get("link", "") or values.get("guid", "")).strip()
-        description = strip_html(values.get("description", "") or values.get("summary", "")
-                                 or values.get("encoded", "") or values.get("content", ""))
-        posted = ""
-        for field in date_aliases:
-            if values.get(field):
-                posted = values[field].strip()
-                break
-        company = strip_html(values.get("author", "") or values.get("creator", "")
-                             or values.get("source", ""))
-
+    for item in candidate_dicts(data):
+        title = strip_html(find_value(item, ("title", "headline", "jobTitle", "name")))
+        link = find_job_url(item)
         if not title or not link:
             continue
+        description = strip_html(find_value(item, ("description", "summary", "responsibilities", "qualifications")))
+        posted = find_value(item, ("datePosted", "datePostedAt", "publishedAt", "published_at",
+                                   "datePublished", "pubDate", "postingDate", "postedAt", "createdAt", "created_at"))
+        company = strip_html(find_value(item, ("hiringOrganization", "company", "companyName", "employer", "organization")))
+        loc = location_text(item)
+        exp = strip_html(find_value(item, ("experience", "experienceLevel", "experienceRange", "yearsExperience")))
+        salary = strip_html(find_value(item, ("salary", "baseSalary", "salaryRange")))
+        text_blob = " ".join(x for x in (title, description, strip_html(item)) if x)
         jobs.append({
-            "source": "OnJob.io RSS", "title": title, "company": company,
-            "location": "Pune, Maharashtra, India", "posted": posted, "url": link,
-            "exp": "", "salary": "", "text": title + " " + description,
+            "source": "OnJob.io JSON", "title": title, "company": company,
+            "location": loc, "posted": posted, "url": link,
+            "exp": exp, "salary": salary, "text": text_blob,
         })
+    # Pagination metadata may be at the top level.
+    next_url = ""
+    if isinstance(data, dict):
+        nxt = data.get("next") or data.get("nextPage") or data.get("next_page")
+        if isinstance(nxt, str):
+            next_url = nxt
+        elif isinstance(nxt, dict):
+            next_url = str(nxt.get("url") or nxt.get("href") or "")
+    return jobs, data, next_url
 
-    if items and jobs and not any(job["posted"] for job in jobs):
-        print("WARNING: RSS items have no recognized posting-date field.")
-        print("Available fields in first item:", sorted(child_values(items[0]).keys()))
-    return jobs
 
 def fetch_free_jobs():
     all_jobs = []
     errors = []
-    for url in RSS_FEEDS:
+    pending = [JSON_FEED]
+    visited = set()
+    while pending and len(visited) < MAX_FEED_PAGES:
+        url = pending.pop(0)
+        if not url or url in visited:
+            continue
+        visited.add(url)
         try:
-            found = fetch_rss_feed(url)
-            print(f"RSS {url}: {len(found)} jobs fetched")
+            found, payload, next_url = fetch_json_feed_page(url)
+            print(f"JSON {url}: {len(found)} job records fetched")
             all_jobs.extend(found)
+            if next_url:
+                if next_url.startswith("/"):
+                    next_url = "https://onjob.io" + next_url
+                elif next_url.startswith("http://"):
+                    next_url = "https://" + next_url[len("http://"):]
+                pending.append(next_url)
+            # OnJob documents a pages[] array for pagination. Read it when present.
+            if isinstance(payload, dict) and isinstance(payload.get("pages"), list):
+                for page in payload["pages"]:
+                    if isinstance(page, str):
+                        page_url = page
+                    elif isinstance(page, dict):
+                        page_url = str(page.get("url") or page.get("href") or "")
+                    else:
+                        page_url = ""
+                    if page_url.startswith("/"):
+                        page_url = "https://onjob.io" + page_url
+                    if page_url and page_url not in visited and page_url not in pending:
+                        pending.append(page_url)
         except Exception as exc:
             errors.append(f"{url}: {type(exc).__name__}: {exc}")
-            print(f"RSS source failed: {errors[-1]}", file=sys.stderr)
+            print(f"JSON source failed: {errors[-1]}", file=sys.stderr)
+    # Deduplicate by canonical URL, preferring the record with a posting date and richer description.
+    deduped = {}
+    for job in all_jobs:
+        k = job["url"].split("?")[0].rstrip("/") or (job["title"] + job["company"])
+        old = deduped.get(k)
+        if old is None or (bool(job["posted"]), len(job["text"])) > (bool(old["posted"]), len(old["text"])):
+            deduped[k] = job
+    all_jobs = list(deduped.values())
     if not all_jobs and errors:
-        raise RuntimeError("All free job feeds failed. " + " | ".join(errors))
+        raise RuntimeError("All free JSON job-feed requests failed. " + " | ".join(errors))
+    if all_jobs and not any(j["posted"] for j in all_jobs):
+        print("WARNING: JSON feed records were fetched, but no recognized posting-date field was found.")
+        print("Freshness filter will reject jobs without a verified date.")
     return all_jobs
 
 # ---------- freshness (strict: unknown => None => dropped) ----------
@@ -251,8 +340,8 @@ def main():
             send_email(
                 f"Job Digest FAILED - {date.today():%d %b}",
                 "<h3>Java Jobs Digest could not fetch jobs</h3>"
-                "<p>The free RSS source failed. This is a source error, not a zero-match result.</p>"
-                f"<pre>{message}</pre><p>Check the RSS URL and GitHub Actions logs.</p>")
+                "<p>The free JSON job source failed. This is a source error, not a zero-match result.</p>"
+                f"<pre>{message}</pre><p>Check the JSON feed URL and GitHub Actions logs.</p>")
             print("Sent source-failure email")
         except Exception as mail_exc:
             print(f"Could not send failure email: {mail_exc}", file=sys.stderr)
@@ -319,7 +408,7 @@ def main():
     else:
         body = ("<p>No jobs met all rules today (posted in last 24h, Pune feed, 70%+ match, "
                 "date verified). Nothing fake added.</p>")
-    body += (f"<p style='color:#777;font-size:12px'>Source: public OnJob.io Pune RSS feed. "
+    body += (f"<p style='color:#777;font-size:12px'>Source: public OnJob.io JSON jobs feed. "
              f"Checked {len(jobs)} postings; {stale} older than 24h and "
              f"{len(unparsed)} with unverifiable dates were dropped. "
              "Feed content is not guaranteed to include every job board.</p>")
