@@ -158,6 +158,7 @@ def fetch_serpapi(query):
             "posted": ext.get("posted_at", ""), "url": link,
             "exp": "", "salary": strip_html(ext.get("salary", "")),
             "remote": bool(ext.get("work_from_home")),
+            "trust_today": True,   # query used chips=date_posted:today
             "text": title + " " + strip_html(x.get("description")),
         })
     return out
@@ -338,8 +339,11 @@ def main():
     unparsed, stale, unique = [], 0, {}
     for j in jobs:
         h = age_hours(j["posted"])
+        date_note = ""
+        if h is None and j.get("trust_today"):
+            h, date_note = 12.0, "today (Google filter)"   # Google said "posted today", exact hour unknown
         if h is None:
-            unparsed.append(j["posted"])
+            unparsed.append(f"{j['posted']!r} <- {j['title']} @ {j['source']}")
             continue
         if h < 0 or h > MAX_AGE_HOURS:
             stale += 1
@@ -349,11 +353,13 @@ def main():
             continue
         j["match"], j["missing"] = res
         j["age_hours"] = h
-        j["age_label"] = "just now" if h < 1 else f"~{round(h)} hours ago"
+        j["age_label"] = date_note or ("just now" if h < 1 else f"~{round(h)} hours ago")
         k = key(j)
         if k not in unique or j["match"] > unique[k]["match"]:
             unique[k] = j
     print(f"dropped: {stale} older than {MAX_AGE_HOURS}h, {len(unparsed)} with unverifiable date")
+    for u in unparsed[:5]:
+        print("  unverifiable:", u)
 
     top = sorted(unique.values(), key=lambda x: (x["age_hours"], -x["match"]))[:TOP_N]
 
