@@ -1,29 +1,4 @@
 {
-  "updatedAt": "2026-10-17T07:09:44+00:00",
-  "jobs": [
-    {
-      "title": "Software / Full Stack Engineer",
-      "company": "QAD",
-      "location": "Pimpri-Chinchwad, Maharashtra",
-      "posted": "today (Google filter)",
-      "age_label": "today (Google filter)",
-      "postedAt": "",
-      "source": "Google Jobs (LinkedIn)",
-      "match": 90,
-      "missing": [],
-      "skills": [
-        "java",
-        "microservices",
-        "javascript",
-        "sql",
-        "git"
-      ],
-      "url": "https://in.linkedin.com/jobs/view/software-full-stack-engineer-at-qad-4480383572?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "applyUrl": "https://in.linkedin.com/jobs/view/software-full-stack-engineer-at-qad-4480383572?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "text": "Software / Full Stack Engineer Organization OverviewCompany Description Help us build the \"System of Action\" that supercharges global manufacturing teams. QAD is entering a high-velocity era to architect the world’s first AI-native, agentic ERP. We are moving beyond legacy \"systems of record\" to build an autonomous platform where humans and AI work as a tag team to redefine how factories operate. Join us at this pivotal moment to build our next generation platform, lead the next generation of the Adaptive Enterprise and turn global speed into strategy. Job Description Ignite Your Future: Are you a proven Full-Stack Engineer ready to take ownership and directly contribute to the future of intelligent manufacturing? Join QAD, where we are redefining the supply chain through our intelligent, ",
-      "workMode": "WFO",
-      "experience": "Not stated",
-      "salary": "Not stated"
-    }
-  ]
+  "updatedAt": "2026-10-18T07:23:52+00:00",
+  "jobs": []
 }
