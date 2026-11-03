@@ -1,4 +1,33 @@
 {
-  "updatedAt": "2026-11-02T09:52:44+00:00",
-  "jobs": []
+  "updatedAt": "2026-11-03T09:56:54+00:00",
+  "jobs": [
+    {
+      "title": "Java Developer (Spring Boot, Kafka, AWS, Microservices)_5+ Yrs_Pune (",
+      "company": "Global Payments Inc.",
+      "location": "Pimpri-Chinchwad, Maharashtra",
+      "posted": "today (Google filter)",
+      "age_label": "today (Google filter)",
+      "postedAt": "",
+      "source": "Google Jobs (LinkedIn)",
+      "match": 79,
+      "missing": [
+        "aws",
+        "kafka",
+        "kubernetes",
+        "terraform"
+      ],
+      "skills": [
+        "java",
+        "spring boot",
+        "spring",
+        "microservices"
+      ],
+      "url": "https://in.linkedin.com/jobs/view/java-developer-spring-boot-kafka-aws-microservices-5%2B-yrs-pune-at-global-payments-inc-4486187877?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://in.linkedin.com/jobs/view/java-developer-spring-boot-kafka-aws-microservices-5%2B-yrs-pune-at-global-payments-inc-4486187877?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "Java Developer (Spring Boot, Kafka, AWS, Microservices)_5+ Yrs_Pune ( Ready to take your career global? Make your mark at one of the biggest names in payments. We’re looking for Software Engineer to join our ever-evolving Apex team and help shape the future of global commerce. What You’ll Own We are looking to hire a top-class Software Engineer to help us on our journey. You need to have experience in designing and building highly scalable, loosely coupled, event driven, distributed systems. You need to be an expert in Java and have built systems using Kafka on premise or in the cloud. You should be capable of leading by example across all functions of the team including agile process adoption, software development, testing, TDD/BDD, DevOps & cloud. You will Guide the team on our journey t",
+      "workMode": "Not stated",
+      "experience": "Not stated",
+      "salary": "Not stated"
+    }
+  ]
 }
