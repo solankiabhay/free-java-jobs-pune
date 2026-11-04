@@ -1,30 +1,96 @@
 {
-  "updatedAt": "2026-11-03T09:56:54+00:00",
+  "updatedAt": "2026-11-04T09:44:44+00:00",
   "jobs": [
     {
-      "title": "Java Developer (Spring Boot, Kafka, AWS, Microservices)_5+ Yrs_Pune (",
+      "title": "Software Engineer(Java Backend Technologies)",
       "company": "Global Payments Inc.",
       "location": "Pimpri-Chinchwad, Maharashtra",
       "posted": "today (Google filter)",
       "age_label": "today (Google filter)",
       "postedAt": "",
       "source": "Google Jobs (LinkedIn)",
-      "match": 79,
+      "match": 82,
       "missing": [
         "aws",
+        "ci/cd",
+        "jenkins",
         "kafka",
         "kubernetes",
-        "terraform"
+        "postgresql"
       ],
       "skills": [
         "java",
         "spring boot",
         "spring",
-        "microservices"
+        "hibernate",
+        "microservices",
+        "rest",
+        "mysql",
+        "sql",
+        "docker",
+        "junit"
       ],
-      "url": "https://in.linkedin.com/jobs/view/java-developer-spring-boot-kafka-aws-microservices-5%2B-yrs-pune-at-global-payments-inc-4486187877?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "applyUrl": "https://in.linkedin.com/jobs/view/java-developer-spring-boot-kafka-aws-microservices-5%2B-yrs-pune-at-global-payments-inc-4486187877?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "text": "Java Developer (Spring Boot, Kafka, AWS, Microservices)_5+ Yrs_Pune ( Ready to take your career global? Make your mark at one of the biggest names in payments. We’re looking for Software Engineer to join our ever-evolving Apex team and help shape the future of global commerce. What You’ll Own We are looking to hire a top-class Software Engineer to help us on our journey. You need to have experience in designing and building highly scalable, loosely coupled, event driven, distributed systems. You need to be an expert in Java and have built systems using Kafka on premise or in the cloud. You should be capable of leading by example across all functions of the team including agile process adoption, software development, testing, TDD/BDD, DevOps & cloud. You will Guide the team on our journey t",
+      "url": "https://in.linkedin.com/jobs/view/software-engineer-java-backend-technologies-at-global-payments-inc-4486849147?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://in.linkedin.com/jobs/view/software-engineer-java-backend-technologies-at-global-payments-inc-4486849147?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "Software Engineer(Java Backend Technologies) Job Posting Description Ready to take your career global? Make your mark at one of the biggest names in payments. We’re looking for a Software Engineer II (Java Backend Technologies) to join our ever‑evolving Access to Cards payments team and help shape the future of global commerce. What You’ll Own Development of Account updater services, regular interaction with teammates and product owner, should be able to lead team of 3-4 people, should be cross skilled to support both development and DevOps efforts.Analyzes, designs, programs, debug and modifies software enhancements and/or new products used in local, networked or Internet-related computer programsKnowledge of web service technologies (REST/SOAP) and API based automation testing.Knowledge ",
+      "workMode": "Not stated",
+      "experience": "Not stated",
+      "salary": "Not stated"
+    },
+    {
+      "title": "Publicis Sapient - Python & Java Developer",
+      "company": "Publicis Sapient",
+      "location": "Pune, Maharashtra",
+      "posted": "today (Google filter)",
+      "age_label": "today (Google filter)",
+      "postedAt": "",
+      "source": "Google Jobs (Jooble)",
+      "match": 82,
+      "missing": [
+        "aws",
+        "azure",
+        "gcp",
+        "kubernetes"
+      ],
+      "skills": [
+        "java",
+        "spring boot",
+        "spring",
+        "microservices",
+        "docker"
+      ],
+      "url": "https://in.jooble.org/jdp/-4882433890022376904?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://in.jooble.org/jdp/-4882433890022376904?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "Publicis Sapient - Python & Java Developer Company Overview : Publicis Sapient is a digital transformation partner that helps established organizations get to their future, digitally-enabled state. Operating at the intersection of strategy, consulting, and customer experience, the firm leverages technology to solve complex business problems for global clients across the retail, financial services, automotive, and energy sectors. With a global footprint and a culture rooted in collaborative problem-solving, Publicis Sapient empowers businesses to thrive in a world driven by constant technological change.Role Overview : As a Python and Java Developer, you will be at the heart of building scalable, high-performance enterprise applications that drive digital innovation for our clients. You wil",
+      "workMode": "Hybrid",
+      "experience": "Not stated",
+      "salary": "Not stated"
+    },
+    {
+      "title": "Sr Associate Software Engineer(Java Backend Technologies)",
+      "company": "Global Payments Inc.",
+      "location": "Pimpri-Chinchwad, Maharashtra",
+      "posted": "today (Google filter)",
+      "age_label": "today (Google filter)",
+      "postedAt": "",
+      "source": "Google Jobs (LinkedIn)",
+      "match": 70,
+      "missing": [
+        "aws",
+        "ci/cd",
+        "kafka",
+        "kubernetes"
+      ],
+      "skills": [
+        "java",
+        "spring boot",
+        "spring",
+        "microservices",
+        "docker"
+      ],
+      "url": "https://in.linkedin.com/jobs/view/sr-associate-software-engineer-java-backend-technologies-at-global-payments-inc-4486848161?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://in.linkedin.com/jobs/view/sr-associate-software-engineer-java-backend-technologies-at-global-payments-inc-4486848161?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "Sr Associate Software Engineer(Java Backend Technologies) Ready to take your career global? Make your mark at one of the biggest names in payments. We’re looking for Software Engineer I (Java Backend Development) to join our ever-evolving Alternative Payment Methods team and help shape the future of global commerce. What You’ll Own Design, implement, test, deploy, and run APM microservices and components.Contribute to component-level design: data models, APIs, SLAs/SLOs, and integration patterns (webhooks, polling, async messaging).Deliver new non-card payment integrations fast: build adapters/connectors, map provider APIs, handle webhooks, support local currencies and regulations.Work iteratively through provider sandboxes, certifications, and phased rollouts to speed launches.Join the on",
       "workMode": "Not stated",
       "experience": "Not stated",
       "salary": "Not stated"
