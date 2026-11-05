@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-11-04T09:44:44+00:00",
+  "updatedAt": "2026-11-05T09:47:25+00:00",
   "jobs": [
     {
-      "title": "Software Engineer(Java Backend Technologies)",
-      "company": "Global Payments Inc.",
+      "title": "Sr. Software Engineer - IT/OT system integration Job",
+      "company": "YASH Technologies Middle East",
       "location": "Pimpri-Chinchwad, Maharashtra",
       "posted": "today (Google filter)",
       "age_label": "today (Google filter)",
@@ -12,85 +12,16 @@
       "match": 82,
       "missing": [
         "aws",
-        "ci/cd",
-        "jenkins",
-        "kafka",
-        "kubernetes",
-        "postgresql"
+        "azure"
       ],
       "skills": [
         "java",
-        "spring boot",
-        "spring",
-        "hibernate",
-        "microservices",
         "rest",
-        "mysql",
-        "sql",
-        "docker",
-        "junit"
+        "sql"
       ],
-      "url": "https://in.linkedin.com/jobs/view/software-engineer-java-backend-technologies-at-global-payments-inc-4486849147?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "applyUrl": "https://in.linkedin.com/jobs/view/software-engineer-java-backend-technologies-at-global-payments-inc-4486849147?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "text": "Software Engineer(Java Backend Technologies) Job Posting Description Ready to take your career global? Make your mark at one of the biggest names in payments. We’re looking for a Software Engineer II (Java Backend Technologies) to join our ever‑evolving Access to Cards payments team and help shape the future of global commerce. What You’ll Own Development of Account updater services, regular interaction with teammates and product owner, should be able to lead team of 3-4 people, should be cross skilled to support both development and DevOps efforts.Analyzes, designs, programs, debug and modifies software enhancements and/or new products used in local, networked or Internet-related computer programsKnowledge of web service technologies (REST/SOAP) and API based automation testing.Knowledge ",
-      "workMode": "Not stated",
-      "experience": "Not stated",
-      "salary": "Not stated"
-    },
-    {
-      "title": "Publicis Sapient - Python & Java Developer",
-      "company": "Publicis Sapient",
-      "location": "Pune, Maharashtra",
-      "posted": "today (Google filter)",
-      "age_label": "today (Google filter)",
-      "postedAt": "",
-      "source": "Google Jobs (Jooble)",
-      "match": 82,
-      "missing": [
-        "aws",
-        "azure",
-        "gcp",
-        "kubernetes"
-      ],
-      "skills": [
-        "java",
-        "spring boot",
-        "spring",
-        "microservices",
-        "docker"
-      ],
-      "url": "https://in.jooble.org/jdp/-4882433890022376904?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "applyUrl": "https://in.jooble.org/jdp/-4882433890022376904?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "text": "Publicis Sapient - Python & Java Developer Company Overview : Publicis Sapient is a digital transformation partner that helps established organizations get to their future, digitally-enabled state. Operating at the intersection of strategy, consulting, and customer experience, the firm leverages technology to solve complex business problems for global clients across the retail, financial services, automotive, and energy sectors. With a global footprint and a culture rooted in collaborative problem-solving, Publicis Sapient empowers businesses to thrive in a world driven by constant technological change.Role Overview : As a Python and Java Developer, you will be at the heart of building scalable, high-performance enterprise applications that drive digital innovation for our clients. You wil",
-      "workMode": "Hybrid",
-      "experience": "Not stated",
-      "salary": "Not stated"
-    },
-    {
-      "title": "Sr Associate Software Engineer(Java Backend Technologies)",
-      "company": "Global Payments Inc.",
-      "location": "Pimpri-Chinchwad, Maharashtra",
-      "posted": "today (Google filter)",
-      "age_label": "today (Google filter)",
-      "postedAt": "",
-      "source": "Google Jobs (LinkedIn)",
-      "match": 70,
-      "missing": [
-        "aws",
-        "ci/cd",
-        "kafka",
-        "kubernetes"
-      ],
-      "skills": [
-        "java",
-        "spring boot",
-        "spring",
-        "microservices",
-        "docker"
-      ],
-      "url": "https://in.linkedin.com/jobs/view/sr-associate-software-engineer-java-backend-technologies-at-global-payments-inc-4486848161?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "applyUrl": "https://in.linkedin.com/jobs/view/sr-associate-software-engineer-java-backend-technologies-at-global-payments-inc-4486848161?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "text": "Sr Associate Software Engineer(Java Backend Technologies) Ready to take your career global? Make your mark at one of the biggest names in payments. We’re looking for Software Engineer I (Java Backend Development) to join our ever-evolving Alternative Payment Methods team and help shape the future of global commerce. What You’ll Own Design, implement, test, deploy, and run APM microservices and components.Contribute to component-level design: data models, APIs, SLAs/SLOs, and integration patterns (webhooks, polling, async messaging).Deliver new non-card payment integrations fast: build adapters/connectors, map provider APIs, handle webhooks, support local currencies and regulations.Work iteratively through provider sandboxes, certifications, and phased rollouts to speed launches.Join the on",
+      "url": "https://in.linkedin.com/jobs/view/sr-software-engineer-it-ot-system-integration-job-at-yash-technologies-middle-east-4485500121?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://in.linkedin.com/jobs/view/sr-software-engineer-it-ot-system-integration-job-at-yash-technologies-middle-east-4485500121?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "Sr. Software Engineer - IT/OT system integration Job We use cookies to offer you the best possible website experience. Your cookie preferences will be stored in your browser’s local storage. This includes cookies necessary for the website's operation. Additionally, you can freely decide and change any time whether you accept cookies or choose to opt out of cookies to improve website's performance, as well as cookies used to display content tailored to your interests. Your experience of the site and the services we are able to offer may be impacted if you do not accept all cookies. Skip to main content Home PageHome PageLife At YASHCore Values CareersBusiness Consulting JobsDigital JobsERPIT Infrastructure JobsSales & Marketing JobsSoftware Development JobsSolution Architects JobsJoin Our T",
       "workMode": "Not stated",
       "experience": "Not stated",
       "salary": "Not stated"
