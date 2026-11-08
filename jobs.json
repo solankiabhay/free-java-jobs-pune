@@ -1,4 +1,37 @@
 {
-  "updatedAt": "2026-11-07T09:09:27+00:00",
-  "jobs": []
+  "updatedAt": "2026-11-08T09:24:57+00:00",
+  "jobs": [
+    {
+      "title": "Java Developer-Insight-Pune-Officer/11) (Maharashtra)",
+      "company": "Citi",
+      "location": "Pune, Maharashtra",
+      "posted": "today (Google filter)",
+      "age_label": "today (Google filter)",
+      "postedAt": "",
+      "source": "Google Jobs (Jobrapido.com)",
+      "match": 84,
+      "missing": [
+        "angular",
+        "aws",
+        "mongodb",
+        "redis",
+        "spark"
+      ],
+      "skills": [
+        "java",
+        "spring boot",
+        "spring",
+        "spring mvc",
+        "hibernate",
+        "rest",
+        "junit"
+      ],
+      "url": "https://in.jobrapido.com/jobpreview/6263742956524535808?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://in.jobrapido.com/jobpreview/6263742956524535808?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "Java Developer-Insight-Pune-Officer/11) (Maharashtra) About Insights Insight is a key platform for Citi for doing US and Global Regulatory and Management Reporting. This platform provides end to end solution from Data Acquisition to report submission for all the critical regulatory reports submitted by Citi. The team is trusted with responsibility of gathering and managing the data in a standard format (Foundation Layer), Enable simplified user friendly transition of data for reporting (Simplified Rules Authoring) and ensure timely and accurate reporting to regulators & managements (Insight platform). Job Description Full Stack Senior Developer/Designer Experience 5-8 Years of experience Job Level C-11 Mandatory Qualifications: Bachelor's degree in Computer Science, Information Technology,",
+      "workMode": "Not stated",
+      "experience": "Not stated",
+      "salary": "Not stated"
+    }
+  ]
 }
