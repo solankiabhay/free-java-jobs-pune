@@ -1,31 +1,4 @@
 {
-  "updatedAt": "2026-11-09T10:10:57+00:00",
-  "jobs": [
-    {
-      "title": "Senior Software Engineer - Fullstack Java, React.Js,etc.",
-      "company": "UnitedHealth Group",
-      "location": "Pune, Maharashtra",
-      "posted": "today (Google filter)",
-      "age_label": "today (Google filter)",
-      "postedAt": "",
-      "source": "Google Jobs (UnitedHealth Group)",
-      "match": 93,
-      "missing": [
-        "mongodb"
-      ],
-      "skills": [
-        "java",
-        "react",
-        "javascript",
-        "mysql",
-        "git"
-      ],
-      "url": "https://careers.unitedhealthgroup.com/job/pune/senior-software-engineer-fullstack-java-react-js-etc/34088/103062906320?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "applyUrl": "https://careers.unitedhealthgroup.com/job/pune/senior-software-engineer-fullstack-java-react-js-etc/34088/103062906320?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "text": "Senior Software Engineer - Fullstack Java, React.Js,etc. Optum is a global organization that delivers care, aided by technology to help millions of people live healthier lives. The work you do with our team will directly improve health outcomes by connecting people with the care, pharmacy benefits, data and resources they need to feel their best. Here, you will find a culture guided by inclusion, talented peers, comprehensive benefits and career development opportunities. Come make an impact on the communities we serve as you help us advance health optimization on a global scale. Join us to start Caring. Connecting. Growing together. Software engineering is the application of engineering to the design, development, implementation, testing and maintenance of software in a systematic method.",
-      "workMode": "Not stated",
-      "experience": "Not stated",
-      "salary": "Not stated"
-    }
-  ]
+  "updatedAt": "2026-11-10T10:17:19+00:00",
+  "jobs": []
 }
