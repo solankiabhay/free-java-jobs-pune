@@ -1,40 +1,4 @@
 {
-  "updatedAt": "2026-11-12T10:10:38+00:00",
-  "jobs": [
-    {
-      "title": "Java Full Stack Developer",
-      "company": "Quest Global",
-      "location": "Pune, Maharashtra",
-      "posted": "today (Google filter)",
-      "age_label": "today (Google filter)",
-      "postedAt": "",
-      "source": "Google Jobs (Quest Global)",
-      "match": 87,
-      "missing": [
-        "aws",
-        "azure",
-        "ci/cd",
-        "mongodb",
-        "oracle"
-      ],
-      "skills": [
-        "java",
-        "spring boot",
-        "spring",
-        "hibernate",
-        "jpa",
-        "microservices",
-        "rest",
-        "react",
-        "javascript",
-        "sql"
-      ],
-      "url": "https://careers.quest-global.com/global/en/job/P-123972/Java-Full-Stack-Developer?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "applyUrl": "https://careers.quest-global.com/global/en/job/P-123972/Java-Full-Stack-Developer?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "text": "Java Full Stack Developer Job Requirements Role and Responsibility Brief We are looking for a highly motivated Full Stack Developer to join the engineering team. The engineer will be responsible for designing, developing, and maintaining scalable web applications, microservices, APIs, and cloud-native solutions that power device management, analytics, workflow automation, and digital employee experience capabilities. The ideal candidate should possess strong expertise in modern front-end frameworks, backend service development, API-first architecture, cloud platforms, DevOps, Agile delivery practices and must have an AI first mindset. Work Experience Years of Experience: 4-6years Must Have Skill Front-End Development · Design and develop responsive, enterprise-grade web applications. · Pro",
-      "workMode": "Not stated",
-      "experience": "Not stated",
-      "salary": "Not stated"
-    }
-  ]
+  "updatedAt": "2026-11-13T09:54:13+00:00",
+  "jobs": []
 }
