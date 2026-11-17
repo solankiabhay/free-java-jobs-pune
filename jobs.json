@@ -1,4 +1,194 @@
 {
-  "updatedAt": "2026-11-16T10:05:55+00:00",
-  "jobs": []
+  "updatedAt": "2026-11-17T11:02:47+00:00",
+  "jobs": [
+    {
+      "title": "Senior Java Dev",
+      "company": "Orion Innovation",
+      "location": "Pune, Maharashtra",
+      "posted": "~5 hours ago",
+      "age_label": "~5 hours ago",
+      "postedAt": "5 hours ago",
+      "source": "Google Jobs (SimplyHired)",
+      "match": 87,
+      "missing": [
+        "ci/cd"
+      ],
+      "skills": [
+        "java",
+        "spring boot",
+        "spring",
+        "hibernate",
+        "jpa",
+        "microservices",
+        "rest",
+        "react",
+        "git",
+        "junit"
+      ],
+      "url": "https://www.simplyhired.co.in/job/Qw_rcOp_9spjAmBsqeC5-ZDTC24QR_wNmlyf3qCSSBpS7YCmzfoeeQ?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://www.simplyhired.co.in/job/Qw_rcOp_9spjAmBsqeC5-ZDTC24QR_wNmlyf3qCSSBpS7YCmzfoeeQ?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "Senior Java Dev Orion Innovation is a premier, award-winning, global business and technology services firm. Orion delivers game-changing business transformation and product development rooted in digital strategy, experience design, and engineering, with a unique combination of agility, scale, and maturity. We work with a wide range of clients across many industries including financial services, professional services, telecommunications and media, consumer products, automotive, industrial automation, professional sports and entertainment, life sciences, ecommerce, and education. Project Overview: We are seeking a highly skilled Senior Java Developer to join our delivery team. The role focuses on building robust applications using Core Java and Java Spring Boot frameworks, complemented by UI",
+      "workMode": "WFO",
+      "experience": "Not stated",
+      "salary": "Not stated"
+    },
+    {
+      "title": "Dot Net Full Stack Developer",
+      "company": "FIS Global",
+      "location": "Pune, Maharashtra",
+      "posted": "~11 hours ago",
+      "age_label": "~11 hours ago",
+      "postedAt": "11 hours ago",
+      "source": "Google Jobs (FIS Global)",
+      "match": 95,
+      "missing": [
+        "oracle"
+      ],
+      "skills": [
+        "java",
+        "microservices",
+        "rest",
+        "sql",
+        "git"
+      ],
+      "url": "https://careers.fisglobal.com/us/en/job/FIGLUSJR0308781EXTERNAL/Dot-Net-Full-Stack-Developer?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://careers.fisglobal.com/us/en/job/FIGLUSJR0308781EXTERNAL/Dot-Net-Full-Stack-Developer?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "Dot Net Full Stack Developer Position Type : Full time Type Of Hire : Experienced (relevant combo of work and education) Education Desired : Bachelor of Information TechnologyDot Net Full Stack Developer – 6 to 8 Yrs of Experience – Pune Location – General Shift About the Role As a Senior Software Engineer, you will design, build, and support high-performance backend solutions for a complex trading platform environment. You will work closely with product, business, quality engineering, and operations teams to deliver scalable, secure, and reliable applications that support critical business functions. Success in this role requires strong software engineering expertise, analytical thinking, and the ability to translate business requirements into robust technical solutions. What You Will Be ",
+      "workMode": "Not stated",
+      "experience": "Not stated",
+      "salary": "Not stated"
+    },
+    {
+      "title": "Full Stack Developer (Angular, Java, Spring Boot, AWS, AI Tools))",
+      "company": "Baker Hughes",
+      "location": "Pune, Maharashtra (+2 others)",
+      "posted": "~11 hours ago",
+      "age_label": "~11 hours ago",
+      "postedAt": "11 hours ago",
+      "source": "Google Jobs (Baker Hughes)",
+      "match": 81,
+      "missing": [
+        "angular",
+        "aws",
+        "azure",
+        "ci/cd",
+        "jenkins"
+      ],
+      "skills": [
+        "java",
+        "spring boot",
+        "spring",
+        "rest",
+        "javascript",
+        "junit"
+      ],
+      "url": "https://careers.bakerhughes.com/global/en/job/R160606/Full-Stack-Developer-Angular-Java-Spring-Boot-AWS-AI-Tools?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://careers.bakerhughes.com/global/en/job/R160606/Full-Stack-Developer-Angular-Java-Spring-Boot-AWS-AI-Tools?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "Full Stack Developer (Angular, Java, Spring Boot, AWS, AI Tools)) Are you a highly motivated, creative individual and passionate about technology and development? Would you like to be a part of successful team? Join our team! Baker Hughes is the leading energy technology company, who delivers across the energy value chain through our market-leading business segments. Built on a century of experience and conducting business in over 120 countries. Our innovative technologies and services are taking energy forward! Making it safer, cleaner and more efficient for people and the planet. As a Full Stack Developer for Baker Hughes, you will be responsible for building and enhancing modern full-stack web applications. This role requires strong hands-on experience in Angular-based frontend developm",
+      "workMode": "Not stated",
+      "experience": "Not stated",
+      "salary": "Not stated"
+    },
+    {
+      "title": "Java Fullstack Developer with Angular",
+      "company": "UST",
+      "location": "Pune, Maharashtra",
+      "posted": "~11 hours ago",
+      "age_label": "~11 hours ago",
+      "postedAt": "11 hours ago",
+      "source": "Google Jobs (SimplyHired)",
+      "match": 80,
+      "missing": [
+        "angular",
+        "aws",
+        "azure",
+        "ci/cd",
+        "gcp",
+        "kafka",
+        "kubernetes",
+        "rabbitmq"
+      ],
+      "skills": [
+        "java",
+        "spring boot",
+        "spring",
+        "hibernate",
+        "jpa",
+        "microservices",
+        "rest",
+        "javascript",
+        "sql",
+        "docker",
+        "git"
+      ],
+      "url": "https://www.simplyhired.co.in/job/2tGDWO71o71da8PoW0KBMYnIK07kMbEHnmXKjhqj4z6Yd9hbzL8cwg?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://www.simplyhired.co.in/job/2tGDWO71o71da8PoW0KBMYnIK07kMbEHnmXKjhqj4z6Yd9hbzL8cwg?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "Java Fullstack Developer with Angular Role description Job Title: Java Full Stack Developer Job Summary We are looking for an experienced Java Full Stack Developer with strong hands-on expertise in Java, Spring Boot, Angular, Microservices, and Cloud technologies. The ideal candidate should be able to design, develop, test, and deploy scalable web applications, working across both backend and frontend components. The role requires strong engineering fundamentals, experience building cloud-native applications, API integration, and familiarity with modern DevOps and CI/CD practices. Key Responsibilities Design, develop, and maintain end-to-end applications using Java and Angular. Build scalable backend services and REST APIs using Java, Spring, and Spring Boot. Design and develop application",
+      "workMode": "Not stated",
+      "experience": "Not stated",
+      "salary": "Not stated"
+    },
+    {
+      "title": "Backend Engineer- Java",
+      "company": "QuinStreet",
+      "location": "Pune, Maharashtra",
+      "posted": "~21 hours ago",
+      "age_label": "~21 hours ago",
+      "postedAt": "21 hours ago",
+      "source": "Google Jobs (Jooble)",
+      "match": 86,
+      "missing": [
+        "kafka",
+        "kubernetes",
+        "oracle",
+        "redis"
+      ],
+      "skills": [
+        "java",
+        "spring boot",
+        "spring",
+        "microservices",
+        "rest",
+        "mysql",
+        "sql",
+        "docker",
+        "git",
+        "junit"
+      ],
+      "url": "https://in.jooble.org/jdp/2256462525759669221?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://in.jooble.org/jdp/2256462525759669221?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "Backend Engineer- Java Powering Performance Marketplaces in Digital Media QuinStreet is a pioneer in powering decentralized online marketplaces that match searchers and “research and compare” consumers with brands . We run these virtual- and private-label marketplaces in one of the nation’s largest media networks. Our industry leading segmentation and AI-driven matching technologies help consumers find better solutions and brands faster. They allow brands to target and reach in-market customer prospects with pinpoint segment-by-segment accuracy, and to pay only for performance results. Our campaign-results-driven matching decision engines and optimization algorithms are built from over 20 years and billions of dollars of online media experience. We believe in: The direct measurability of d",
+      "workMode": "Hybrid",
+      "experience": "Not stated",
+      "salary": "Not stated"
+    },
+    {
+      "title": "Java , Springboot, API/Senior Consultant Specialist",
+      "company": "HSBC",
+      "location": "Pune, Maharashtra",
+      "posted": "~23 hours ago",
+      "age_label": "~23 hours ago",
+      "postedAt": "23 hours ago",
+      "source": "Google Jobs (Hackajob)",
+      "match": 75,
+      "missing": [
+        "angular",
+        "ci/cd",
+        "jenkins"
+      ],
+      "skills": [
+        "java",
+        "rest",
+        "react",
+        "javascript",
+        "git"
+      ],
+      "url": "https://hackajob.com/job/321d0bdf-e1b6-11f1-b4a8-0a05e249917d-java-springboot-api-senior-consultant-specialist?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://hackajob.com/job/321d0bdf-e1b6-11f1-b4a8-0a05e249917d-java-springboot-api-senior-consultant-specialist?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "Java , Springboot, API/Senior Consultant Specialist Some careers shine brighter than others. If you’re looking for a career that will help you stand out, join HSBC and fulfil your potential. Whether you want a career that could take you to the top, or simply take you in an exciting new direction, HSBC offers opportunities, support and rewards that will take you further. HSBC is one of the largest banking and financial services organisations in the world, with operations in 64 countries and territories. We aim to be where the growth is, enabling businesses to thrive and economies to prosper, and, ultimately, helping people to fulfil their hopes and realise their ambitions. We are currently seeking an experienced professional to join our team in the role of Senior Consultant Specialist In th",
+      "workMode": "Not stated",
+      "experience": "Not stated",
+      "salary": "Not stated"
+    }
+  ]
 }
