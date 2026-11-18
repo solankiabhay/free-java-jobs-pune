@@ -1,147 +1,136 @@
 {
-  "updatedAt": "2026-11-17T11:02:47+00:00",
+  "updatedAt": "2026-11-18T10:36:38+00:00",
   "jobs": [
     {
-      "title": "Senior Java Dev",
-      "company": "Orion Innovation",
-      "location": "Pune, Maharashtra",
-      "posted": "~5 hours ago",
-      "age_label": "~5 hours ago",
-      "postedAt": "5 hours ago",
-      "source": "Google Jobs (SimplyHired)",
-      "match": 87,
-      "missing": [
-        "ci/cd"
-      ],
-      "skills": [
-        "java",
-        "spring boot",
-        "spring",
-        "hibernate",
-        "jpa",
-        "microservices",
-        "rest",
-        "react",
-        "git",
-        "junit"
-      ],
-      "url": "https://www.simplyhired.co.in/job/Qw_rcOp_9spjAmBsqeC5-ZDTC24QR_wNmlyf3qCSSBpS7YCmzfoeeQ?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "applyUrl": "https://www.simplyhired.co.in/job/Qw_rcOp_9spjAmBsqeC5-ZDTC24QR_wNmlyf3qCSSBpS7YCmzfoeeQ?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "text": "Senior Java Dev Orion Innovation is a premier, award-winning, global business and technology services firm. Orion delivers game-changing business transformation and product development rooted in digital strategy, experience design, and engineering, with a unique combination of agility, scale, and maturity. We work with a wide range of clients across many industries including financial services, professional services, telecommunications and media, consumer products, automotive, industrial automation, professional sports and entertainment, life sciences, ecommerce, and education. Project Overview: We are seeking a highly skilled Senior Java Developer to join our delivery team. The role focuses on building robust applications using Core Java and Java Spring Boot frameworks, complemented by UI",
-      "workMode": "WFO",
-      "experience": "Not stated",
-      "salary": "Not stated"
-    },
-    {
-      "title": "Dot Net Full Stack Developer",
-      "company": "FIS Global",
+      "title": "Java Backend Software Engineer",
+      "company": "Blue Yonder Pvt Ltd",
       "location": "Pune, Maharashtra",
       "posted": "~11 hours ago",
       "age_label": "~11 hours ago",
       "postedAt": "11 hours ago",
-      "source": "Google Jobs (FIS Global)",
-      "match": 95,
+      "source": "Google Jobs (Apna Jobs)",
+      "match": 85,
       "missing": [
-        "oracle"
-      ],
-      "skills": [
-        "java",
-        "microservices",
-        "rest",
-        "sql",
-        "git"
-      ],
-      "url": "https://careers.fisglobal.com/us/en/job/FIGLUSJR0308781EXTERNAL/Dot-Net-Full-Stack-Developer?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "applyUrl": "https://careers.fisglobal.com/us/en/job/FIGLUSJR0308781EXTERNAL/Dot-Net-Full-Stack-Developer?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "text": "Dot Net Full Stack Developer Position Type : Full time Type Of Hire : Experienced (relevant combo of work and education) Education Desired : Bachelor of Information TechnologyDot Net Full Stack Developer – 6 to 8 Yrs of Experience – Pune Location – General Shift About the Role As a Senior Software Engineer, you will design, build, and support high-performance backend solutions for a complex trading platform environment. You will work closely with product, business, quality engineering, and operations teams to deliver scalable, secure, and reliable applications that support critical business functions. Success in this role requires strong software engineering expertise, analytical thinking, and the ability to translate business requirements into robust technical solutions. What You Will Be ",
-      "workMode": "Not stated",
-      "experience": "Not stated",
-      "salary": "Not stated"
-    },
-    {
-      "title": "Full Stack Developer (Angular, Java, Spring Boot, AWS, AI Tools))",
-      "company": "Baker Hughes",
-      "location": "Pune, Maharashtra (+2 others)",
-      "posted": "~11 hours ago",
-      "age_label": "~11 hours ago",
-      "postedAt": "11 hours ago",
-      "source": "Google Jobs (Baker Hughes)",
-      "match": 81,
-      "missing": [
-        "angular",
-        "aws",
-        "azure",
-        "ci/cd",
-        "jenkins"
-      ],
-      "skills": [
-        "java",
-        "spring boot",
-        "spring",
-        "rest",
-        "javascript",
-        "junit"
-      ],
-      "url": "https://careers.bakerhughes.com/global/en/job/R160606/Full-Stack-Developer-Angular-Java-Spring-Boot-AWS-AI-Tools?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "applyUrl": "https://careers.bakerhughes.com/global/en/job/R160606/Full-Stack-Developer-Angular-Java-Spring-Boot-AWS-AI-Tools?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "text": "Full Stack Developer (Angular, Java, Spring Boot, AWS, AI Tools)) Are you a highly motivated, creative individual and passionate about technology and development? Would you like to be a part of successful team? Join our team! Baker Hughes is the leading energy technology company, who delivers across the energy value chain through our market-leading business segments. Built on a century of experience and conducting business in over 120 countries. Our innovative technologies and services are taking energy forward! Making it safer, cleaner and more efficient for people and the planet. As a Full Stack Developer for Baker Hughes, you will be responsible for building and enhancing modern full-stack web applications. This role requires strong hands-on experience in Angular-based frontend developm",
-      "workMode": "Not stated",
-      "experience": "Not stated",
-      "salary": "Not stated"
-    },
-    {
-      "title": "Java Fullstack Developer with Angular",
-      "company": "UST",
-      "location": "Pune, Maharashtra",
-      "posted": "~11 hours ago",
-      "age_label": "~11 hours ago",
-      "postedAt": "11 hours ago",
-      "source": "Google Jobs (SimplyHired)",
-      "match": 80,
-      "missing": [
-        "angular",
         "aws",
         "azure",
         "ci/cd",
         "gcp",
-        "kafka",
-        "kubernetes",
-        "rabbitmq"
+        "oracle",
+        "postgresql"
       ],
       "skills": [
         "java",
         "spring boot",
         "spring",
         "hibernate",
-        "jpa",
         "microservices",
         "rest",
+        "react",
         "javascript",
-        "sql",
-        "docker",
-        "git"
+        "mysql",
+        "sql"
       ],
-      "url": "https://www.simplyhired.co.in/job/2tGDWO71o71da8PoW0KBMYnIK07kMbEHnmXKjhqj4z6Yd9hbzL8cwg?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "applyUrl": "https://www.simplyhired.co.in/job/2tGDWO71o71da8PoW0KBMYnIK07kMbEHnmXKjhqj4z6Yd9hbzL8cwg?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "text": "Java Fullstack Developer with Angular Role description Job Title: Java Full Stack Developer Job Summary We are looking for an experienced Java Full Stack Developer with strong hands-on expertise in Java, Spring Boot, Angular, Microservices, and Cloud technologies. The ideal candidate should be able to design, develop, test, and deploy scalable web applications, working across both backend and frontend components. The role requires strong engineering fundamentals, experience building cloud-native applications, API integration, and familiarity with modern DevOps and CI/CD practices. Key Responsibilities Design, develop, and maintain end-to-end applications using Java and Angular. Build scalable backend services and REST APIs using Java, Spring, and Spring Boot. Design and develop application",
+      "url": "https://apna.co/job/pune/software-engineer-2-java-byds-1774165359?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://apna.co/job/pune/software-engineer-2-java-byds-1774165359?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "Java Backend Software Engineer Software Engineer 2 - Java (BYDS) Scope: Responsible for independently delivering Java-based backend features and database integrations, while contributing to design, performance optimization, and continuous improvement efforts. Important part is writing Java server test cases as well as a part of development work. Our current technical environment: Software: Java 8, Oracle Sql, any Sql Database, Basic understanding of OOPs, Design patterns, Basic Front end understanding, basic understanding of Data Structures, javascript/react js, Node js.,Python Application Architecture : Service Networking Overlay , aiming for a single, cloud-agnostic architecture that simplifies policy management across public/private clouds via components like service meshes, API gateway",
       "workMode": "Not stated",
       "experience": "Not stated",
       "salary": "Not stated"
     },
     {
-      "title": "Backend Engineer- Java",
-      "company": "QuinStreet",
+      "title": "Senior Full-Stack Developer - Finance - Hybrid (Pune)",
+      "company": "pico",
       "location": "Pune, Maharashtra",
-      "posted": "~21 hours ago",
-      "age_label": "~21 hours ago",
-      "postedAt": "21 hours ago",
-      "source": "Google Jobs (Jooble)",
-      "match": 86,
+      "posted": "~11 hours ago",
+      "age_label": "~11 hours ago",
+      "postedAt": "11 hours ago",
+      "source": "Google Jobs (Kit Job)",
+      "match": 84,
       "missing": [
-        "kafka",
+        "angular"
+      ],
+      "skills": [
+        "java",
+        "rest",
+        "react",
+        "sql"
+      ],
+      "url": "https://www.kitjob.in/job/353821718/senior-full-stack-developer-finance-hybrid-pune?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://www.kitjob.in/job/353821718/senior-full-stack-developer-finance-hybrid-pune?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "Senior Full-Stack Developer - Finance - Hybrid (Pune) Pico fuels the global capital markets community by providing exceptional market data services and customized managed infrastructure solutions. As financial industry experts at the center of markets and technology, we help our clients efficiently scale their business and quickly access markets. From infrastructure to connectivity, we support our clients through the full trading lifecycle. We are a global company headquartered in New York, with offices in Chicago, London, Singapore, Hong Kong and Tokyo. Pico is a rapidly expanding Fintech company that offers innovative, transparent, low-latency markets solutions from a portfolio of best-in-class products coupled with an agile and expert service delivery platform. We help our clients to ef",
+      "workMode": "Hybrid",
+      "experience": "Not stated",
+      "salary": "Not stated"
+    },
+    {
+      "title": "Lead Front-End Java Developer (Pune)",
+      "company": "Happiest Minds Technologies",
+      "location": "Pune, Maharashtra",
+      "posted": "~11 hours ago",
+      "age_label": "~11 hours ago",
+      "postedAt": "11 hours ago",
+      "source": "Google Jobs (Jobrapido.com)",
+      "match": 72,
+      "missing": [
+        "angular",
+        "aws",
+        "ci/cd",
+        "kubernetes"
+      ],
+      "skills": [
+        "java",
+        "spring boot",
+        "spring",
+        "microservices",
+        "react",
+        "sql",
+        "docker"
+      ],
+      "url": "https://in.jobrapido.com/jobpreview/8772751387856470016?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://in.jobrapido.com/jobpreview/8772751387856470016?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "Lead Front-End Java Developer (Pune) Backend Developer Years of Experience: 5-10 Years We are seeking a highly skilled Senior Backend Developer with extensive experience in designing, developing, and maintaining scalable backend services and enterprise applications using Java Spring Boot microservices on AWS. The ideal candidate will be responsible for building RESTful APIs, optimizing performance, ensuring security and observability, and contributing to CI/CD pipelines. This role requires collaboration with cross-functional teams to deliver high-quality, data-driven applications while supporting system design, architectural decisions, and continuous platform improvements. Design, develop, and maintain scalable backend services and enterprise applications using Java Spring Boot microservic",
+      "workMode": "Not stated",
+      "experience": "Not stated",
+      "salary": "Not stated"
+    },
+    {
+      "title": "Senior Software Engineer React, python, Java fullstack",
+      "company": "NECSWS",
+      "location": "Pune, Maharashtra",
+      "posted": "~15 hours ago",
+      "age_label": "~15 hours ago",
+      "postedAt": "15 hours ago",
+      "source": "Google Jobs (Jooble)",
+      "match": 89,
+      "missing": [],
+      "skills": [
+        "java",
+        "react"
+      ],
+      "url": "https://in.jooble.org/jdp/-4196827119766455991?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://in.jooble.org/jdp/-4196827119766455991?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "Senior Software Engineer React, python, Java fullstack JD - Exp - 5 - 7 Yrs Fullstack Dev Java - good to have React and Python - Mandatory AI based tool exposure Job location - Pune Hybrid Additional Information : NA Remote Work : No Employment Type : Full-time",
+      "workMode": "Hybrid",
+      "experience": "Not stated",
+      "salary": "Not stated"
+    },
+    {
+      "title": "Full Stack Engineer (Java + AI- Pune/ Chennai)",
+      "company": "Creospan Inc.",
+      "location": "Pune, Maharashtra",
+      "posted": "~22 hours ago",
+      "age_label": "~22 hours ago",
+      "postedAt": "22 hours ago",
+      "source": "Google Jobs (LinkedIn)",
+      "match": 83,
+      "missing": [
+        "aws",
+        "azure",
+        "ci/cd",
+        "gcp",
         "kubernetes",
         "oracle",
-        "redis"
+        "postgresql"
       ],
       "skills": [
         "java",
@@ -149,43 +138,16 @@
         "spring",
         "microservices",
         "rest",
+        "react",
         "mysql",
         "sql",
         "docker",
         "git",
         "junit"
       ],
-      "url": "https://in.jooble.org/jdp/2256462525759669221?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "applyUrl": "https://in.jooble.org/jdp/2256462525759669221?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "text": "Backend Engineer- Java Powering Performance Marketplaces in Digital Media QuinStreet is a pioneer in powering decentralized online marketplaces that match searchers and “research and compare” consumers with brands . We run these virtual- and private-label marketplaces in one of the nation’s largest media networks. Our industry leading segmentation and AI-driven matching technologies help consumers find better solutions and brands faster. They allow brands to target and reach in-market customer prospects with pinpoint segment-by-segment accuracy, and to pay only for performance results. Our campaign-results-driven matching decision engines and optimization algorithms are built from over 20 years and billions of dollars of online media experience. We believe in: The direct measurability of d",
-      "workMode": "Hybrid",
-      "experience": "Not stated",
-      "salary": "Not stated"
-    },
-    {
-      "title": "Java , Springboot, API/Senior Consultant Specialist",
-      "company": "HSBC",
-      "location": "Pune, Maharashtra",
-      "posted": "~23 hours ago",
-      "age_label": "~23 hours ago",
-      "postedAt": "23 hours ago",
-      "source": "Google Jobs (Hackajob)",
-      "match": 75,
-      "missing": [
-        "angular",
-        "ci/cd",
-        "jenkins"
-      ],
-      "skills": [
-        "java",
-        "rest",
-        "react",
-        "javascript",
-        "git"
-      ],
-      "url": "https://hackajob.com/job/321d0bdf-e1b6-11f1-b4a8-0a05e249917d-java-springboot-api-senior-consultant-specialist?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "applyUrl": "https://hackajob.com/job/321d0bdf-e1b6-11f1-b4a8-0a05e249917d-java-springboot-api-senior-consultant-specialist?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "text": "Java , Springboot, API/Senior Consultant Specialist Some careers shine brighter than others. If you’re looking for a career that will help you stand out, join HSBC and fulfil your potential. Whether you want a career that could take you to the top, or simply take you in an exciting new direction, HSBC offers opportunities, support and rewards that will take you further. HSBC is one of the largest banking and financial services organisations in the world, with operations in 64 countries and territories. We aim to be where the growth is, enabling businesses to thrive and economies to prosper, and, ultimately, helping people to fulfil their hopes and realise their ambitions. We are currently seeking an experienced professional to join our team in the role of Senior Consultant Specialist In th",
+      "url": "https://in.linkedin.com/jobs/view/full-stack-engineer-java-%2B-ai-pune-chennai-at-creospan-inc-4491162519?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://in.linkedin.com/jobs/view/full-stack-engineer-java-%2B-ai-pune-chennai-at-creospan-inc-4491162519?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "Full Stack Engineer (Java + AI- Pune/ Chennai) Required Skills Java: Strong hands-on experience with Core Java and object-oriented programming.Spring Boot: Experience developing REST APIs and backend applications.Microservices: Understanding of microservices architecture and service-to-service communication.REST APIs: Experience designing, developing, and integrating RESTful services.React.js: Hands-on experience with React, components, hooks, state management, and frontend integration.AI Experience: Practical exposure to AI/GenAI integration, LLM APIs, AI-powered application development, or related AI use cases.Database: Experience with SQL databases such as PostgreSQL, MySQL, or Oracle.Testing: Knowledge of unit testing frameworks such as JUnit and Mockito.Tools: Familiarity with Git, Ma",
       "workMode": "Not stated",
       "experience": "Not stated",
       "salary": "Not stated"
