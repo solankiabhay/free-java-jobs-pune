@@ -1,4 +1,32 @@
 {
-  "updatedAt": "2026-11-21T10:06:31+00:00",
-  "jobs": []
+  "updatedAt": "2026-11-22T10:10:07+00:00",
+  "jobs": [
+    {
+      "title": "AVP- Java Developer - Fixed Income Technology (Pune)",
+      "company": "Jefferies Financial Group",
+      "location": "Pune, Maharashtra",
+      "posted": "~10 hours ago",
+      "age_label": "~10 hours ago",
+      "postedAt": "10 hours ago",
+      "source": "Google Jobs (Jobrapido.com)",
+      "match": 78,
+      "missing": [
+        "ci/cd",
+        "kafka",
+        "rabbitmq"
+      ],
+      "skills": [
+        "java",
+        "sql",
+        "docker",
+        "git"
+      ],
+      "url": "https://in.jobrapido.com/jobpreview/3003511278737031168?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://in.jobrapido.com/jobpreview/3003511278737031168?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "AVP- Java Developer - Fixed Income Technology (Pune) Description Job Title: Java Developer Location: Pune, India Employment Type: Full-time Innovation Hub Overview Jefferies is creating a Technology Innovation Hub in Pune, a greenfield opportunity to build the systems that power global markets. As our first India technology center, this hub brings together hands on builders who engineer the platforms behind Jefferies’ growth across capital markets, investment banking, and institutional securities. We’re scaling toward an elite team of 500 engineers while maintaining the agility, ownership, and meritocratic spirit that defines Jefferies. From cloud and data to AI, risk, and core business technologies, teams in Pune will lead high impact work with a global mandate. Fixed Income Technology Je",
+      "workMode": "Not stated",
+      "experience": "Not stated",
+      "salary": "Not stated"
+    }
+  ]
 }
