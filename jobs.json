@@ -1,56 +1,25 @@
 {
-  "updatedAt": "2026-11-24T12:51:16+00:00",
+  "updatedAt": "2026-11-25T11:39:45+00:00",
   "jobs": [
     {
-      "title": "Java +React",
-      "company": "Wissen Technology",
-      "location": "Pune, Maharashtra (+1 other)",
-      "posted": "~13 hours ago",
-      "age_label": "~13 hours ago",
-      "postedAt": "13 hours ago",
-      "source": "Google Jobs (Talent.com)",
-      "match": 82,
+      "title": "IT Software Engineer (Java & ALM)",
+      "company": "Roche",
+      "location": "Pune, Maharashtra",
+      "posted": "~12 hours ago",
+      "age_label": "~12 hours ago",
+      "postedAt": "12 hours ago",
+      "source": "Google Jobs (Roche Careers)",
+      "match": 81,
       "missing": [
-        "oracle"
+        "ci/cd"
       ],
       "skills": [
         "java",
-        "react",
-        "sql"
+        "rest"
       ],
-      "url": "https://in.talent.com/view?id=605410723364613484&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "applyUrl": "https://in.talent.com/view?id=605410723364613484&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "text": "Java +React Wissen Technology is Hiring for Java + React About Wissen Technology: At Wissen Technology, we deliver niche, custom-built products that solve complex business challenges across industries worldwide. Founded in 2015, our core philosophy is built around a strong product engineering mindset—ensuring every solution is architected and delivered right the first time. Today, Wissen Technology has a global footprint with 2000+ employees across offices in the US, UK, UAE, India, and Australia. Our commitment to excellence translates into delivering 2X impact compared to traditional service providers. How do we achieve this Through a combination of deep domain knowledge, cutting-edge technology expertise, and a relentless focus on quality. We don't just meet expectations—we exceed them ",
-      "workMode": "Not stated",
-      "experience": "Not stated",
-      "salary": "Not stated"
-    },
-    {
-      "title": "Senior Java Backend Developer (J2EE, Docker) (4 to 6 Years)- Pune/Bangalore",
-      "company": "FIS",
-      "location": "Pimpri-Chinchwad, Maharashtra",
-      "posted": "~19 hours ago",
-      "age_label": "~19 hours ago",
-      "postedAt": "19 hours ago",
-      "source": "Google Jobs (LinkedIn)",
-      "match": 88,
-      "missing": [
-        "kubernetes",
-        "oracle"
-      ],
-      "skills": [
-        "java",
-        "spring",
-        "hibernate",
-        "javascript",
-        "sql",
-        "docker",
-        "git",
-        "postman"
-      ],
-      "url": "https://in.linkedin.com/jobs/view/senior-java-backend-developer-j2ee-docker-4-to-6-years-pune-bangalore-at-fis-4493694088?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "applyUrl": "https://in.linkedin.com/jobs/view/senior-java-backend-developer-j2ee-docker-4-to-6-years-pune-bangalore-at-fis-4493694088?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "text": "Senior Java Backend Developer (J2EE, Docker) (4 to 6 Years)- Pune/Bangalore Position Type Full time Type Of Hire Experienced (relevant combo of work and education) Job Description For Java Developer (Banking / Payments) Are you curious, motivated, and forward-thinking? At FIS you’ll have the opportunity to work on some of the most challenging and relevant issues in financial services and technology. Our talented people empower us, and we believe in being part of a team that is open, collaborative, entrepreneurial, passionate and above all fun. About The Team This role is a part of our OPF team. FIS Open Payment Framework (OPF) is a set of reusable and extensible components, frameworks, and technical services which can be assembled in different configurations to build a personalized Payment",
+      "url": "https://careers.roche.com/global/en/job/ROCHGLOBAL202611129698EXTERNALENGLOBAL/IT-Software-Engineer-Java-ALM?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://careers.roche.com/global/en/job/ROCHGLOBAL202611129698EXTERNALENGLOBAL/IT-Software-Engineer-Java-ALM?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "IT Software Engineer (Java & ALM) At Roche you can show up as yourself, embraced for the unique qualities you bring. Our culture encourages personal expression, open dialogue, and genuine connections, where you are valued, accepted and respected for who you are, allowing you to thrive both personally and professionally. This is how we aim to prevent, stop and cure diseases and ensure everyone has access to healthcare today and for generations to come. Join Roche, where every voice matters. The PositionJoin our team as a Software Engineer – Java & Enterprise Application Lifecycle Management (ALM), where you will shape the backbone of our software engineering ecosystems. In this pivotal role, you will lead technical strategy and backend architecture while fostering a collaborative, agile env",
       "workMode": "Not stated",
       "experience": "Not stated",
       "salary": "Not stated"
