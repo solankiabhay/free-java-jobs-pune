@@ -1,4 +1,30 @@
 {
-  "updatedAt": "2026-11-27T11:18:21+00:00",
-  "jobs": []
+  "updatedAt": "2026-11-28T10:46:35+00:00",
+  "jobs": [
+    {
+      "title": "Adroitent - Senior Java & TypeScript Developer - Payment Processing",
+      "company": "Adroitent ITES Pvt Ltd",
+      "location": "Pune, Maharashtra",
+      "posted": "~7 hours ago",
+      "age_label": "~7 hours ago",
+      "postedAt": "7 hours ago",
+      "source": "Google Jobs (Jooble)",
+      "match": 85,
+      "missing": [
+        "oracle"
+      ],
+      "skills": [
+        "java",
+        "spring boot",
+        "spring",
+        "microservices"
+      ],
+      "url": "https://in.jooble.org/jdp/6302098947984386652?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://in.jooble.org/jdp/6302098947984386652?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "text": "Adroitent - Senior Java & TypeScript Developer - Payment Processing Job Description:We are seeking a highly experienced Senior Java & TypeScript Developer to take ownership of critical enterprise applications, integration components, and their ongoing operational health supporting payment processing and core business operations. This role operates in a highly collaborative, team-oriented environment, working closely across architecture, operations, and business teams.Mandatory Skills:- Java development, Spring, Microservices, Production Support, Typescript, IBM MQ.- Java 8/11/17 upgrades.- Spring Boot internals.- Oracle query tuning.- Dependency conflict resolution.- Linux commands.- JAR analysis and troubleshooting.- Production support incidents (P1/P2).- Log analysis and root cause inves",
+      "workMode": "Not stated",
+      "experience": "Not stated",
+      "salary": "Not stated"
+    }
+  ]
 }
